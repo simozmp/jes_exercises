@@ -6,6 +6,9 @@ def pixelExchange(sourcePixel, targetPixel) :
   setColor(targetPixel, getColor(sourcePixel))
   setColor(sourcePixel, color)
 
+#  NB. This function works only with a limited number of stripes
+#      (I assume that's because of the approximation of delta)
+
 def verticalStripesExchange(pic, stripesNumber) :
   # @param pic: Picture;
   # @param stripesNumber: int;    Number of stripes in the picture
