@@ -22,6 +22,8 @@ def digitalZoom(pic, ratio) :
       
       # For each pixel of the picture (without outer margins)..
       
+      color = getColor(getPixelAt(pic, x, y))
+      
       for newY in range(i,i+ratio) :
         if newY < height :                    # In order to avoid size overflows
           for newX in range(j,j+ratio) :
@@ -30,7 +32,7 @@ def digitalZoom(pic, ratio) :
               # For each pixel in the "ratio x ratio" squared neighbor
               # relative to the pixel x,y of the original image
               
-              setColor(getPixel(newPic, newX, newY), getColor(getPixelAt(pic, x, y)))
+              setColor(getPixel(newPic, newX, newY), color)
         
       i=i+ratio  # Getting to the next pixel (newPic)
     
