@@ -14,12 +14,10 @@ def mostCol(pic, color) :
   
   if(color == "red") :
     target = makeColor(255,0,0)
-  else :
-    if(color == "green") :
-      target = makeColor(0,255,0)
-    else :
-      if(color == "blue") :
-        target = makeColor(0,0,255)
+  elif(color == "green") :
+    target = makeColor(0,255,0)
+  elif(color == "blue") :
+    target = makeColor(0,0,255)
   
   # Cicle
   
