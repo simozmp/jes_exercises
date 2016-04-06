@@ -27,10 +27,10 @@ def contours(pic, neighbour, treshold) :
      pixColor = getColor(getPixelAt(pic, x, y))    # Keep the color of the pointed pixel in order to compare it with its neighbor's
      
      for neighbourX in range(x-neighbour, x+neighbour) :         # Secondary cycle to scan each pixel of the neighbour (x-axis)
-       if neighbourX <= width and neighbourX >= 0 :              # Check done in order to avoid size overflows
+       if neighbourX < width and neighbourX >= 0 :              # Check done in order to avoid size overflows
          for neighbourY in range(y-neighbour, y+neighbour) :     # Secondary cycle to scan each pixel of the neighbour (y-axis)
            
-           if (neighbourX != x and neighbourY != y) and (neighbourY <= height) and (neighbourY >= 0): # Check done in order to avoid size overflows,
+           if (neighbourX != x and neighbourY != y) and (neighbourY < height) and (neighbourY >= 0): # Check done in order to avoid size overflows,
                                                                                                       # and to pass over the pointed pixel (x,y)
              
              checkList.append(distance(getColor(getPixelAt(pic, neighbourX, neighbourY)), pixColor) > treshold)    # Append boolean elements to the check list
