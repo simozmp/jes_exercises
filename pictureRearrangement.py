@@ -23,6 +23,7 @@ def fragmentation(pic, sectors) :
 
 def defragmentation(list) :
   # @param list: Picture[];  
+  # @return Picture; The complete picture
   
   sectorsPerSide = int(sqrt(len(list)))     # Number of sectors on each side
   
@@ -92,8 +93,9 @@ def verticalCollage(pic1, pic2) :
   return result
 
 def pictureRearrangement(pic, sectors, order) :
-  # @param pic: Picture;
-  # @param sectors: int;
+  # @param pic: Picture;  The 'disordered' picture
+  # @param sectors: int;  Number of total sectors/fragments in the picture
+  # @param order: int[];  List of the correct order of the picture (len = sectors)
   
   print "fragmentation.."
   sectorsList = fragmentation(pic,sectors)
