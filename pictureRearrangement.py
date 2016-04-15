@@ -86,7 +86,7 @@ def verticalCollage(pic1, pic2) :
   # Copy of the second picture in the final
   for y in range(height2) :
     for x in range(width2) :
-      pix1 = getPixelAt(result,x,y+height2)
+      pix1 = getPixelAt(result,x,y+height1)
       pix2 = getPixelAt(pic2,x,y)
       setColor(pix1,getColor(pix2))
   
